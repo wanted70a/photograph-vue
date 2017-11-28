@@ -1,0 +1,40 @@
+.login{
+  &__background{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    filter: brightness(50%);
+  }
+  &__holder{
+    position: relative;
+    z-index: 10;
+  }
+  input{
+    background: none;
+    color: $colorWhite;
+    border-bottom: 1px solid $colorWhite;
+    &::placeholder{
+      color: $colorWhite;
+    }
+  }
+  .forgotPassword{
+    color: $colorWhite;
+    font-size: 2rem;
+    display: block;
+    font-weight: lighter;
+  }
+  .btn{
+    margin-top: 25%;
+    &:hover{
+      color: $colorBlack;
+    }
+  }
+  .switchLogin{
+    color: $colorWhite;
+  }
+  .icon{
+    color: $colorWhite;
+  }
+}

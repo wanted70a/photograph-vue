@@ -1,0 +1,46 @@
+.form{
+  margin-top: 14rem;
+  &__input{
+    position: relative;
+    input{
+      border: 0;
+      border-bottom: 1px solid $colorBlack;
+      width: 100%;
+      margin-bottom: 5rem;
+      padding-bottom: 0.8rem;
+      color: $colorBlack;
+      outline: none;
+      font-size: 2rem;
+      padding-left: 5rem;
+      position: relative;
+      &::placeholder{
+        color: $colorBlack;
+      }
+    }
+    .icon{
+      position: absolute;
+      left: 0.8rem;
+      top: 0rem;
+      z-index: 1;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  .terms{
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    span{
+      color: $colorGreen;
+    }
+  }
+}
+.switchLogin{
+  text-align: center;
+  font-size: 2.3rem;
+  margin-top: 4rem;
+  a{
+    color: $colorGreen;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

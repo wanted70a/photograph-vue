@@ -1,0 +1,15 @@
+.logo{
+  font-size: 8rem;
+  font-weight: lighter;
+  text-transform: lowercase;
+  &__white{
+    color: $colorWhite;
+    @extend .logo;
+    span{
+      font-weight: normal;
+    }
+  }
+  span{
+    font-weight: normal;
+  }
+}
