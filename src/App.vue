@@ -45,7 +45,12 @@
 
                               <div class="form__input">
                                   <icon class="icon" name="user-o"></icon>
-                                  <input class="" placeholder="Username" type="text" v-model='name'>
+                                  <input class="" placeholder="Name" type="text" v-model='name'>
+                              </div>
+
+                              <div class="form__input">
+                                  <icon class="icon" name="user-o"></icon>
+                                  <input class="" placeholder="Username" type="text" v-model='username'>
                               </div>
                               <div class="terms">I accept to the <span>Terms & Privacy Policy</span></div>
 
@@ -103,7 +108,8 @@ export default {
             email: this.registeremail,
             username: this.username,
             name: this.name,
-            password: this.registerpassword
+            password: this.registerpassword,
+            password_confirmation: this.registerpassword
         }
         this.$http.post(registerUrl, registerData)
         .then(response => {
