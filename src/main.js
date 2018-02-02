@@ -5,28 +5,24 @@ import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import toastr from 'toastr'
 
+
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon.vue'
+
 import App from './App'
-import ForgotPassword from './pages/forgotPassword/ForgotPassword'
-import ResetPassword from './pages/forgotPassword/ResetPassword'
-import DashboardPage from './pages/DashboardPage'
+import Routes from './routes.js'
+
+import {store} from './store/store.js' //global data
+
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.component('icon', Icon)
 /* eslint-disable no-new */
 
-const routes = [
-    {path: '/', component: App, name:'home'},
-    {path: '/forgot', component: ForgotPassword, name:'forgotPassword'},
-    {path: '/reset', component: ResetPassword, name:'resetPassword'},
-    {path: '/dashboard', component: DashboardPage, name:'dashboard', meta: { requiresAuth: true}}
-]
-
 const router = new VueRouter({
     mode: 'history',
-    routes
+    routes: Routes
 })
 
 router.beforeEach((to, from, next) => {
@@ -45,5 +41,8 @@ router.beforeEach((to, from, next) => {
 })
 
 new Vue({
-    router
-}).$mount('#app')
+    name:'photogram',
+    el:'#app',
+    router:router,
+    store:store,
+})

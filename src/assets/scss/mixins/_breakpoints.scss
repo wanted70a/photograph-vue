@@ -22,9 +22,12 @@
         @media (min-width: $tablet) and (max-width: $toDesktop) { @content; }
     }
     @else if $point == phone {
-        @media (max-width: $toTablet)                           { @content; }
+        @media (max-width: $phone)                              { @content; }
     }
     @else if $point == phoneSmall {
         @media (max-width: $toPhone--small)                     { @content; }
+    }
+    @else if $point == fromPhone {
+        @media (min-width: $tablet)                             { @content; }
     }
 }

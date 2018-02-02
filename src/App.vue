@@ -21,7 +21,7 @@
                     <button class="btn">Log in</button>
                 </form>
             </div>
-              <div class="switchLogin animated lightSpeedIn">Don't have account? <span><a @click='show = !show'>Sign up</a></span></div>
+              <div class="switchLogin animated lightSpeedIn">Don't have account? <span><a @click='toggleShow'>Sign up</a></span></div>
               </div>
           </div>
               <div v-else class="register">
@@ -52,31 +52,31 @@
                                   <icon class="icon" name="user-o"></icon>
                                   <input class="" placeholder="Username" type="text" v-model='username'>
                               </div>
-                              <div class="terms">I accept to the <span>Terms & Privacy Policy</span></div>
+                              <div class="terms">I accept to the <router-link to="/terms-of-use"><span>Terms & Privacy Policy</span></router-link></div>
 
                               <button class="btn">Sign Up</button>
                           </form>
                       </div>
-                        <div class="switchLogin animated lightSpeedIn">Already have Account? <span><a @click='show = !show'>Log in</a></span></div>
+                        <div class="switchLogin animated lightSpeedIn">Already have Account? <span><a @click='toggleShow'>Log in</a></span></div>
                   </div>
                 </section>
               </div>
 </template>
 
 <script>
-import {apiDomain, getHeader, userUrl, registerUrl} from './config'
+import {apiLogin, getHeader, userUrl, registerUrl} from './config'
 import toastr from 'toastr'
 
 export default {
     data(){
         return{
-            email: '',
-            password:'',
+            email: 'stefan.milic@diwanee.com',
+            password:'1',
             username: '',
             name: '',
             registeremail: '',
             registerpassword: '',
-            show: true
+            //show: true
         }
     },
     methods:{
@@ -84,11 +84,15 @@ export default {
             const postData = {
                 email: this.email,
                 password: this.password
-            }
-            const authUser = {}
-            this.$http.post(apiDomain, postData)
+            };
+
+            const authUser = {};
+
+            this.$http.post(apiLogin, postData)
             .then(response => {
                 if (response.status === 200){
+                    console.log(postData);
+                    console.log(response.body);
                     authUser.access_token = response.body.token
                     window.localStorage.setItem('authUser', JSON.stringify(authUser))
                     this.$router.push({name: 'dashboard'})
@@ -121,11 +125,20 @@ export default {
                 toastr.error('Duplicated email, please try something else !')
             }
     });
+},
+toggleShow(){
+    this.$store.commit('toggleShow');
 }
+},
+
+computed:{
+    show(){
+        return this.$store.state.show;
+    }
 }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "/assets/scss/default.scss"
 </style>

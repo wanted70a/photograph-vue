@@ -1,0 +1,52 @@
+//-------------------------
+//-------------------HEADER
+//-------------------------
+$header-link-icon-desktop:4rem;
+
+.b-header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items:center;
+    border-bottom: 1px solid black;
+
+    &__icon{
+        display: inline-block;
+        width:$header-link-icon-desktop;
+        height: $header-link-icon-desktop;
+        line-height: $header-link-icon-desktop;
+        text-align: center;
+        border-radius: 50%;
+        background: black;
+        overflow: hidden;
+    }
+
+    &__navigation{
+        &-link{
+
+        }
+    }
+
+    &__logo{
+        h1{
+            color:black
+        }
+    }
+
+    &__utilities{
+        display: flex;
+        flex-flow: row nowrap;
+
+        &-search{
+
+        }
+
+        &-lang{
+            display: inline-block;
+            width:$header-link-icon-desktop;
+            height: $header-link-icon-desktop;
+            line-height: $header-link-icon-desktop;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.mo-post{
+    //common styles
+    & img, & video{
+        width:100%;
+    }
+}
+
+.mo-post{
+    @include breakpoint(fromPhone){
+        width: 24%;
+        margin-bottom: 20px;
+    }
+
+    &-inner{
+
+    }
+
+    &__avatar{
+        display: flex;
+        flex-flow: row nowrap;
+
+        &__profile-picture{
+            width:4vw;
+            height:4vw;
+
+            & img{
+                height: 100%;
+                border-radius:100%;
+            }
+        }
+
+        &__name{
+            align-self:center;
+        }
+    }
+
+    &__media{}
+
+    &__stats{
+        padding-bottom: 5px;
+        border-bottom: 1px solid gray;
+    }
+
+    &__comments{}
+}

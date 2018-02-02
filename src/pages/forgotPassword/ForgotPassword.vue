@@ -66,47 +66,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-    @import '../../assets/css/bootstrap.css';
+<style lang="scss">
 
-    .row{
-        margin: 3% auto;
-    }
-    .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-  opacity: 0
-}
-    h1{
-        text-align: center;
-        margin-top: 10rem;
-        span{
-            color: orange;
-        }
-    }
-    .login{
-        transition: .5s all ease-in;
-    }
-    .nav-tabs{
-        background-color:#158cba;
-        border-bottom: 1px solid #158cba;
-        a{
-            border:0;
-            margin: 0;
-            cursor: pointer;
-            color: #fff;
-                padding: 15px 25px;
-            &:hover{
-                padding: 15px 25px;
-                border-radius: 0;
-                color: #000;
-            }
-        }
-        .active{
-                background-color:orange;
-                    color: #fff;
-                    border-radius:0;
-        }
-    }
 </style>
